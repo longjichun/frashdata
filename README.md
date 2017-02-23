@@ -1,2 +1,2 @@
-# frashdata
+# freshdata
 websocket comet
