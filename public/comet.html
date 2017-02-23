@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>comet</title>
+	<link rel="stylesheet" href="css/test.css">
+</head>
+<body>
+	<script src="lib/freshdata.js"></script>
+	<script>
+		var source1 =  new freshData.comet({url:'/test'});
+		source1.bindfn('open',function(d){
+			console.log("open")
+		})
+		source1.bindfn("message",function(d){
+			console.log("收到数据"+d)
+		})
+		source1.bindfn("unlink",function(d){
+			console.log("连接断开")
+		})
+		source1.bindfn("heartbeat",function(ind){
+			console.log('第'+ind+'次心跳')
+		})
+	</script>
+</body>
+</html>
